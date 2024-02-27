@@ -22,7 +22,7 @@ mongoose.connect(mongo_URI, {  })
 
 // CORS configuration
 app.use(cors({
-    origin: "http://localhost:1234", // Allow requests from this origin
+    origin: "https://main--statuesque-bombolone-6323f8.netlify.app", // Allow requests from this origin
     methods: ["GET", "POST"], // Allow GET and POST requests
     credentials: true // Allow sending cookies from the client
 }));
