@@ -10,7 +10,13 @@ dotenv.config(); // Load environment variables
 const app = express();
 const port = process.env.PORT || 3001;
 const mongo_URI = process.env.MONGODB_URI; 
-app.use(cors());
+
+// Enable CORS
+app.use(cors({
+    origin: 'https://main--statuesque-bombolone-6323f8.netlify.app',
+    credentials: true
+  }));
+  
 
 // MongoDB connection
 mongoose.connect(mongo_URI, {  })
