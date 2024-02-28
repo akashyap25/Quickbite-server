@@ -21,12 +21,7 @@ mongoose.connect(mongo_URI, {  })
         console.error('MongoDB connection error:', err);
     });
 
-// CORS configuration
-app.use(cors({
-    origin: "*", // Allow requests from this origin
-    methods: ["GET", "POST"], // Allow GET and POST requests
-    credentials: true // Allow sending cookies from the client
-}));
+
 
 app.use(cookieParser()); // Middleware to parse cookies
 
