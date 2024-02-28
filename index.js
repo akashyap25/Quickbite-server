@@ -12,9 +12,27 @@ const port = process.env.PORT || 3001;
 const mongo_URI = process.env.MONGODB_URI; 
 
 // Enable CORS
-app.use(cors({
-    origin: 'https://main--statuesque-bombolone-6323f8.netlify.app',
-    credentials: true
+const allowedOrigins = [
+    'https://main--statuesque-bombolone-6323f8.netlify.app/login',
+    'https://main--statuesque-bombolone-6323f8.netlify.app/register',
+    'https://main--statuesque-bombolone-6323f8.netlify.app',
+    'https://main--statuesque-bombolone-6323f8.netlify.app/',
+  ];
+  
+  app.use(cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or CURL requests)
+      if (!origin) return callback(null, true);
+      
+      // Check if the request's origin is allowed
+      if (allowedOrigins.indexOf(origin) === -1) {
+        var msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+      }
+      
+      // Origin is allowed
+      return callback(null, true);
+    }
   }));
   
 
