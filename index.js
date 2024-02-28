@@ -13,12 +13,10 @@ const mongo_URI = process.env.MONGODB_URI;
 
 // Enable CORS
 const allowedOrigins = [
-    'https://main--statuesque-bombolone-6323f8.netlify.app/login',
-    'https://main--statuesque-bombolone-6323f8.netlify.app/register',
-    'https://main--statuesque-bombolone-6323f8.netlify.app',
-    'https://main--statuesque-bombolone-6323f8.netlify.app/',
-    '*', // Allow any origin
-  ];
+  'https://main--statuesque-bombolone-6323f8.netlify.app',
+  'https://*.netlify.app'
+];
+
   
   app.use(cors({
     origin: function (origin, callback) {
