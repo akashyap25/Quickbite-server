@@ -17,6 +17,7 @@ const allowedOrigins = [
     'https://main--statuesque-bombolone-6323f8.netlify.app/register',
     'https://main--statuesque-bombolone-6323f8.netlify.app',
     'https://main--statuesque-bombolone-6323f8.netlify.app/',
+    '*', // Allow any origin
   ];
   
   app.use(cors({
