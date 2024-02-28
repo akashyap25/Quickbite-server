@@ -32,8 +32,10 @@ const allowedOrigins = [
       
       // Origin is allowed
       return callback(null, true);
-    }
+    },
+    credentials: true // Allow cookies to be sent with the request
   }));
+  
   
 
 // MongoDB connection
