@@ -67,3 +67,5 @@ dist/
 .cache/
 .parcel-cache/
 ```
+# Local Netlify folder
+.netlify
