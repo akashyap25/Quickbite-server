@@ -17,11 +17,6 @@ const mongo_URI = process.env.MONGODB_URI;
 
 
 app.use(cors(
-    {
-        origin: `${process.env.FRONT_END_URL}`,
-        credentials: true,
-
-    }
 )); 
 app.use(cookieParser()); 
 app.use(express.json());
