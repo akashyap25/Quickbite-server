@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 
 const User = require("../model/authModel");
 
-const cookieExpireIn = 1000 * 60 * 60 * 24 * 7; // 7 days
+const cookieExpireIn = 1000 * 60 * 60 * 24 * 7; 
 
 // create token
 const createToken = (id) => {

@@ -13,23 +13,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 const mongo_URI = process.env.MONGODB_URI;
-
-const allowedOrigins = [
-  'http://localhost:1234', // Add all your allowed origins here
-  'https://quickbite-091e.onrender.com'
-];
-
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // Allow non-origin requests (like mobile apps)
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true // Allow credentials
-}));
+   
+app.use(cors({credentials: true, origin: 'http://localhost:1234'}));
 
 app.use(cookieParser());
 app.use(express.json());
