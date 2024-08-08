@@ -98,7 +98,8 @@ router.post("/login", async (req, res) => {
           path: "/",
           expires: new Date(Date.now() + cookieExpireIn),
           httpOnly: true,
-          sameSite: "lax",
+          sameSite: "none",
+
         });
         console.log("Generated Token\n", token);
 
@@ -154,6 +155,7 @@ router.get("/:id/verify/:token", async (req, res) => {
 });
 
 router.get("/auth_user", async (req, res, next) => {
+    console.log(req.session);
   if (!req.session || !req.session.sessionId) {
     return res
       .status(403)
