@@ -18,7 +18,7 @@ const mongo_URI = process.env.MONGODB_URI;
 
 app.use(cors(
     {
-        origin: "http://localhost:1234",
+        origin: `${process.env.FRONT_END_URL}`,
         credentials: true,
 
     }
